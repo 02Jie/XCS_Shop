@@ -1,0 +1,51 @@
+.shops {
+  width: 100%;
+  //   background-color: rgb(179, 207, 77);
+  display: flex;
+  flex-flow: row nowrap;
+  .left {
+    width: 30%;
+    height: 100%;
+    // background-color: aqua;
+    .leftList {
+      padding: 20px;
+    }
+    .active {
+        color: #ff1111;
+    }
+    .scroll {
+      height: 100vh;
+    }
+  }
+  .right {
+    width: 70%;
+    height: 100%;
+    // background-color: rgb(255, 127, 217);
+    .rightScroll {
+      height: 100vh;
+      .right_group {
+        .title {
+          text-align: center;
+          font-size: 35rpx;
+          margin: 30rpx;
+        }
+
+        .box {
+          display: grid;
+          grid-template-columns: 33% 37% 20%;
+
+          .content {
+            margin: 20rpx;
+            text-align: center;
+            .icon {
+              image {
+                width: 120rpx;
+                height: 120prx;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

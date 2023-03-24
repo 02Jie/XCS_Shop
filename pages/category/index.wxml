@@ -1,0 +1,32 @@
+<div class="index">
+    <view class="search">
+        <SearchInput></SearchInput>
+    </view>
+    <view class="shops">
+        <view class="left">
+            <scroll-view scroll-y="{{true}}" class="scroll">
+                <view class="leftList {{index===currentIndex ? 'active' : ''}}" wx:key="*this" wx:for="{{leftMenu}}" bindtap="handleNav" data-index="{{index}}">
+                    {{item}}
+                </view>
+            </scroll-view>
+        </view>
+        <view class="right">
+            <scroll-view scroll-top="{{scrollTop}}" class="rightScroll" scroll-y="{{true}}">
+                <view class="right_group" wx:for="{{rightMenu}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                    <view class="title">{{item.cat_name}}</view>
+                    <view class="box">
+                        <view class="content" wx:for="{{item.children}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+                           <navigator url="/pages/goods_list/index?cat_id={{item.cat_id}}"  open-type="navigate">
+                             <view class="icon">
+                                <image class="imgs" mode="widthFix" src="{{item.cat_icon}}" />
+                            </view>
+                            <view class="product">{{item.cat_name}}</view>
+                           </navigator>
+                             
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</div>

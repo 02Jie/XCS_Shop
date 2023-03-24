@@ -1,0 +1,5 @@
+<!--pages/collect/index.wxml-->
+ <Tabs tabs="{{tabs}}" bindItemTabs="handleItemTabs">
+    内容
+</Tabs>
+

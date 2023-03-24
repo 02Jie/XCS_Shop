@@ -1,0 +1,106 @@
+<!-- pages/user/index.wxml -->
+<view class="user_bg">
+    <block wx:if="{{userInfo.nickName}}">
+        <view class="user_blur">
+            <image src="{{userInfo.avatarUrl}}" />
+        </view>
+        <view class="user_pic">
+            <view>
+                <image src="{{userInfo.avatarUrl}}" />
+            </view>
+            <view class="user_name">{{userInfo.nickName}}</view>
+        </view>
+    </block>
+    <block wx:else>
+        <navigator url="../login/index" open-type="navigate">登录</navigator>
+    </block>
+</view>
+<view class="float">
+    <!-- 收藏店铺部分 -->
+    <view class="f_shop">
+        <view class="f_s_item">
+            <view class="nums">0</view>
+            <view class="title">收藏的店铺</view>
+        </view>
+       <navigator  url="../collect/index"  open-type="navigate">
+         <view class="f_s_item">
+            <view class="nums">{{collectNum}}</view>
+            <view class="title">收藏的商品</view>
+        </view>
+       </navigator>
+         
+        <view class="f_s_item">
+            <view class="nums">0</view>
+            <view class="title">关注的店铺</view>
+        </view>
+        <view class="f_s_item">
+            <view class="nums">0</view>
+            <view class="title">我的足迹</view>
+        </view>
+    </view>
+    <!-- 我的订单 -->
+    <view class="f_order">
+        <view class="f_o_title">我的订单</view>
+        <view class="f_o_item">
+         <navigator url="../order/index?type=1"  open-type="navigate">
+              <view class="f_0_i_box">
+             <view class="iconfont icon-dingdan"></view>
+            <view class="title">全部订单</view>
+           </view>
+         </navigator>
+           
+        <navigator  url="../order/index?type=2"  open-type="navigate">
+                 <view class="f_0_i_box">
+             <view class="iconfont icon-fukuantongzhi"></view>
+            <view class="title">待付款</view>
+           </view>
+        </navigator>
+          
+          <navigator  url="../order/index?type=3" open-type="navigate">
+              <view class="f_0_i_box">
+             <view class="iconfont icon-receipt-address"></view>
+            <view class="title">待收货</view>
+           </view>
+          </navigator>
+            
+          <navigator  url="../order/index?type=4" open-type="navigate">
+              <view class="f_0_i_box">
+             <view class="iconfont icon-tuihuotuikuan_dianpu"></view>
+            <view class="title">退货/付款</view>
+           </view>
+          </navigator>
+            
+        </view>
+    </view>
+    <!-- 收获地址管理 -->
+    <view class="f_address">
+        <view class="f_a_left">收货地址管理</view>
+        <view class="iconfont icon-youjiantou f_a_right"> </view>
+    </view>
+      
+      <!-- 联系客服 -->
+      <view class="f_serve">
+        <view class="f_s_box">
+            <view class="f_s_b_left">联系客服</view>
+            <view class="f_s_b_right">400-618-4000</view>
+        </view>
+
+          <view class="f_s_box">
+            <view class="f_s_b_left">意见反馈</view>
+            <view class="f_s_b_right iconfont icon-youjiantou "></view>
+        </view>
+
+          <view class="f_s_box">
+            <view class="f_s_b_left">关于我们</view>
+            <view class="f_s_b_right iconfont icon-youjiantou "></view>
+        </view>
+
+      </view>
+      <!-- 推荐给其他人 -->
+    <view class="f_recommend">
+        <view class="f_r_left">把应用推荐给其他人</view>
+        <view class="iconfont icon-youjiantou f_r_right"> </view>
+    </view>
+       
+
+</view>

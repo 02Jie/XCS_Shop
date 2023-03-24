@@ -1,0 +1,44 @@
+<!-- pages/category/index.wxml -->
+<view>
+  <SearchInput />
+  <view class="index_swiper">
+    <swiper indicator-dots="{{true}}" indicator-color="#ae5e63" indicator-active-color="#ffffff" autoplay="{{true}}" interval="3000" circular="{{true}}">
+      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id" style="width: 100%; height: 100%;">
+        <navigator>
+          <image src="{{item.image_src}}" alt="" mode="widthFix" />
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="index_nav">
+    <navigator wx:for="{{navList}}" wx:for-item="item" wx:for-index="index" wx:key="index" class="index_nav_item">
+      <image src="{{item.image_src}}"></image>
+    </navigator>
+  </view>
+  <!-- 楼层 -->
+ <view class="index_floor">
+    <view class="floor_group" 
+    wx:for="{{floorList}}" 
+    wx:for-item="item1" 
+    wx:for-index="index1"
+    wx:key="floor_title"
+    >
+    
+      <view class="floor_title">
+        <image class="" src="{{item1.floor_title.image_src}}" mode="widthFix" />
+      </view>
+      <view class="floor_list">
+        <navigator  
+        wx:for="{{item1.product_list}}" 
+        wx:for-item="item2" 
+        wx:for-index="index2"
+        wx:key="name">
+          <image src="{{item2.image_src}}" mode="{{index2===0 ? 'widthFix':'scaleToFill'}}"  />
+            
+        </navigator>
+          
+      </view>
+    </view>
+ </view>
+   
+</view>

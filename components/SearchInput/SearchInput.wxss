@@ -1,0 +1,1 @@
+@import '../../styles//iconfont.wxss';.search{color:#666;font-size:30rpx;height:80rpx;background-color:#d81e06;padding:10rpx}.search navigator{display:flex;flex-flow:row nowrap;justify-content:center;align-items:center;height:60rpx;background-color:#fff;border-radius:10rpx}

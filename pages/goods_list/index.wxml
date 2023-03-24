@@ -1,0 +1,27 @@
+<!--pages/goods_list/index.wxml-->
+<view class="search">
+    <SearchInput></SearchInput>
+    <Tabs tabs="{{tabs}}" bindItemTabs="handleItemTabs">
+    <block wx:if="{{tabs[0].selected}}">
+       
+        <view class="synthesize"  wx:for="{{goodList}}" wx:for-item="item" wx:for-index="index">
+           <navigator  open-type="navigate" url="../goods_detail/index?goods_id={{item.goods_id}}" >
+             <view class="synthesize_left">
+                <image  src="{{item.goods_small_logo}}" mode="widthFix"   />
+                  
+             </view>
+            <view class="synthesize_right">
+                <view class="title">{{item.goods_name}}</view>
+                <view class="price">￥{{item.goods_price}}</view>
+            </view >
+           </navigator>
+             
+        </view>
+
+     
+          
+    </block>
+    <block wx:if="{{tabs[1].selected}}">2</block>
+    <block wx:if="{{tabs[2].selected}}">3</block>
+    </Tabs>
+</view>

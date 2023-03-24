@@ -1,0 +1,71 @@
+<view class="handleAddress">
+    <view class="get_address" wx:if="{{!address}}">
+        <button type="primary" plain="{{true}}">获取收获地址</button>
+    </view>
+    <view wx:else class="show_address">
+       <view class="container">
+           <view class="c_left">
+             <view class="userName">
+                收货人：{{address.userName}}
+            </view>
+            <view class="detailInfo">
+                {{detailInfo}}
+            </view>
+           </view >
+             
+            <view class="c-right">
+                {{address.telNumber}}
+            </view>
+              
+       </view>
+         
+    </view>
+      
+</view>
+<view class="carts">
+    <!-- 标题 -->
+    <view class="title">购物车</view>
+        <!-- 内容盒子 -->
+     <view class="c_container" wx:for="{{carts}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+   
+        <!-- 商品图片 -->
+        <view class="c_goodsImg">
+            <image class="" src="{{item.goods_small_logo}}" mode="widthFix" />   
+        </view>
+        <view class="c_goodsInfo">
+            <view class="goods_title" >
+                {{item.goods_name}}
+            </view>
+              <view class="goods_price_row">
+                <view class="goods_price">
+                    ￥{{item.goods_price}}
+                </view>
+                  <view class="goods_nums">
+                        <view class="nums" >X{{item.nums}}</view>                 
+                  </view>
+              </view>
+        </view>          
+     </view>
+        
+     <!-- 底部内容 -->
+     <view class="f_container">
+
+          <!-- 底部右边   -->
+          <view class="f_right">
+                <view class="f_txt">合计：</view>
+                <view class="f_txt">
+                    <view class="price">
+                        ￥{{totalPrice}}
+                    </view>
+                      <view>
+                        包含运费
+                      </view>
+                        
+                </view>
+                <view class="clear" bindtap="handleOrderPay">支付({{totoalNums}})</view>
+          </view>
+            
+     </view>
+</view>
+  
+  

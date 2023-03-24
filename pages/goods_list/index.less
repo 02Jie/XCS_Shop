@@ -1,0 +1,40 @@
+/* pages/goods_list/index.wxss */
+.search {
+  .synthesize {
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: 1rpx solid #ccc;
+    navigator {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      .synthesize_left {
+        flex: 1;
+        margin: 20rpx;
+        image {
+            width: 300rpx;
+            height: 300rpx;
+        }
+      }
+      .synthesize_right {
+        flex: 2;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        .title {
+            text-overflow: -o-ellipsis-lastline;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2; //行数需设置
+            line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+        .price {
+            color: #eb4450;
+            font-size: 35rpx;
+        }
+      }
+    }
+  }
+}

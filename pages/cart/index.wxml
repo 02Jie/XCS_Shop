@@ -1,0 +1,96 @@
+<view class="handleAddress">
+    <view class="get_address" wx:if="{{!address}}">
+        <button type="primary" bindtap="getAddress" plain="{{true}}">获取收获地址</button>
+    </view>
+    <view wx:else class="show_address">
+       <view class="container">
+           <view class="c_left">
+             <view class="userName">
+                收货人：{{address.userName}}
+            </view>
+            <view class="detailInfo">
+                {{detailInfo}}
+            </view>
+           </view >
+             
+            <view class="c-right">
+                {{address.telNumber}}
+            </view>
+              
+       </view>
+         
+    </view>
+      
+</view>
+<view class="carts">
+    <!-- 标题 -->
+    <view class="title">购物车</view>
+    <block wx:if="{{carts.length > 0}}">
+        <!-- 内容盒子 -->
+     <view class="c_container" wx:for="{{carts}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+        <!-- 左边内容 复选框 -->
+        <view class="c_checkbox">
+           <checkbox-group bindchange="handleChecked" data-id="{{item.goods_id}}">
+             <checkbox checked="{{item.checked}}" />  
+           </checkbox-group>
+             
+        </view>
+        <!-- 商品图片 -->
+        <view class="c_goodsImg">
+            <image class="" src="{{item.goods_small_logo}}" mode="widthFix" />   
+        </view>
+        <view class="c_goodsInfo">
+            <view class="goods_title" >
+                {{item.goods_name}}
+            </view>
+              <view class="goods_price_row">
+                <view class="goods_price">
+                    ￥{{item.goods_price}}
+                </view>
+                  <view class="goods_nums">
+                        <view class="minus" bindtap="handleNumEdit" data-id="{{item.goods_id}}" data-opreater="{{-1}}">-</view>
+                        <view class="nums" >{{item.nums}}</view>
+                        <view class="add"  bindtap="handleNumEdit" data-id="{{item.goods_id}}" data-opreater="{{1}}">+</view>
+                  </view>
+              </view>
+        </view>          
+     </view>
+    </block>
+      <block wx:else>
+        <view class="sky">
+            <image class="" src="https://hbimg.huabanimg.com/a4064bdab5f6c800ed664014f3eb7d13a4dd25b3138d0-hYHe07_fw658" mode="widthFix" />
+        </view>
+      </block>
+        
+     <!-- 底部内容 -->
+     <view class="f_container">
+        <!--  底部左边 -->
+          <view class="f_left">
+           <view>
+           <checkbox-group bindchange="handleCheckedAll" >
+             <checkbox checked="{{allChecked}}"/>
+           </checkbox-group>
+             
+           </view>
+             
+          <view >全选</view> 
+          </view>
+          <!-- 底部右边   -->
+          <view class="f_right">
+                <view class="f_txt">合计：</view>
+                <view class="f_txt">
+                    <view class="price">
+                        ￥{{totalPrice}}
+                    </view>
+                      <view>
+                        包含运费
+                      </view>
+                        
+                </view>
+                <view class="clear" bindtap="handleBuyDispose">结算({{totoalNums}})</view>
+          </view>
+            
+     </view>
+</view>
+  
+  

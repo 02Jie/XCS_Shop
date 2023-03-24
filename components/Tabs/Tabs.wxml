@@ -1,0 +1,9 @@
+<!--components/Tabs/Tabs.wxml-->
+<view class="tabs">
+    <view class="tabs_item {{item.selected===true ? 'selected' : ''}}"  wx:for="{{tabs}}" wx:for-item="item" wx:for-index="index" bindtap="handleTab" data-index="{{index}}">
+        {{item.title}}
+    </view>  
+</view>
+    <view class="content">
+        <slot ></slot>
+    </view> 

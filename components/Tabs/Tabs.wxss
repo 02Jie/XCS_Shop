@@ -1,0 +1,1 @@
+.tabs{display:flex;flex-flow:row nowrap;justify-content:space-between;border-bottom:1rpx solid #ccc}.tabs .tabs_item{padding:25rpx 24rpx}.tabs .selected{color:#f8554d;border-bottom:2rpx solid #f8554d}
