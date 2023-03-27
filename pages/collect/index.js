@@ -27,7 +27,19 @@ Page({
         selected: false,
       },
     ],
-   
+    collect:[],
+    shopTitle: [
+      {
+        title:"全部"
+      },
+      {
+        title:"正在热卖"
+      },
+      {
+        title:"即将上线"
+      }
+    ],
+    shopItem: {}
   },
   handleItemTabs(e) { 
     let index = e.detail;
@@ -39,6 +51,18 @@ Page({
     this.setData({
       tabs,
     }); 
-},
+  },
+  onShow() { 
+    let collect = wx.getStorageSync('collect') || [];
+    this.setData({
+      collect
+    })
+       
+    // let shopItem = this.data.shopTitle.map(v => { return v.title})
+    // console.log(shopItem, "shopItem");
+    // this.setData({
+    //   shopItem
+    // })
+  }
 
 })

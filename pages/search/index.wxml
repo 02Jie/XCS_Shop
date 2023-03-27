@@ -1,2 +1,20 @@
-<!--pages/search/index.wxml-->
-<text>pages/search/index.wxml</text>
+<!-- pages/search/index.wxml -->
+<view class="search_container">
+    <view class="s_input">
+        <input type="text" name="" id="" placeholder="请输入您要搜索的商品" bindinput="handleInput"></input>
+    </view>
+    <!-- <view class="s_btn">
+        <button>取消</button>
+    </view> -->
+</view>
+<view class="shop_list">
+    
+        <view class="shop_item" wx:for="{{shopList}}" wx:for-item="item" wx:for-index="index">
+            <navigator url="../goods_detail/index?goods_id={{item.goods_id}}" open-type="navigate">
+        {{item.goods_name}}
+        </navigator>
+    </view>  
+    
+          
+</view>
+  

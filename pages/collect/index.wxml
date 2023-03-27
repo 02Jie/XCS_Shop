@@ -1,5 +1,15 @@
 <!--pages/collect/index.wxml-->
  <Tabs tabs="{{tabs}}" bindItemTabs="handleItemTabs">
-    内容
+    <view class="shop_title_container">
+        <view class="shop_title" wx:for="{{shopTitle}}" wx:for-item="item" wx:for-index="index">
+            {{item.title}}
+        </view>
+    </view>
+
+    <view>
+        暂无数据
+    </view>
+      
+      
 </Tabs>
 
