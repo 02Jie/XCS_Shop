@@ -85,10 +85,13 @@
             <view class="f_s_b_right">400-618-4000</view>
         </view>
 
-          <view class="f_s_box">
+       <navigator  url="../feedback/index" open-type="navigate">
+           <view class="f_s_box">
             <view class="f_s_b_left">意见反馈</view>
             <view class="f_s_b_right iconfont icon-youjiantou "></view>
-        </view>
+          </view>
+       </navigator>
+         
 
           <view class="f_s_box">
             <view class="f_s_b_left">关于我们</view>

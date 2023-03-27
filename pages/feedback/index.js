@@ -5,9 +5,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tabs: [
+      {
+        id: 0,
+        title: "体验问题",
+        selected: true,
+      },
+      {
+        id: 1,
+        title: "商品、商家投诉",
+        selected: false,
+      },
+      
+    ],
   },
-
+ // 点击tab栏
+ handleItemTabs(e) {
+  console.log(e, "父组件的e");
+  let index = e.detail;
+  console.log(index, "index");
+  let { tabs } = this.data;
+  console.log(tabs, "tabs");
+  tabs.forEach((v, i) => {
+    i === index ? (v.selected = true) : (v.selected = false);
+  });
+  this.setData({
+    tabs,
+  });
+},
   /**
    * 生命周期函数--监听页面加载
    */
