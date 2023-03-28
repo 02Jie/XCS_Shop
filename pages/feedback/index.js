@@ -18,6 +18,28 @@ Page({
       },
       
     ],
+    upImgList:[]
+  },
+  //上传图片
+  handleUpImg() { 
+    wx.chooseMedia({
+      //最多上传的图片
+      count: 9,
+      mediaType: ['image','video'], //文件类型  图片 || 视频
+      sourceType: ['album', 'camera'], // 文件来源 album：相册选择  camera：照相机拍摄
+      maxDuration: 30, //拍摄视频最长时间 3-60
+      camera: 'back', //仅在 sourceType 为 camera 时生效，使用前置或后置摄像头
+      success: (res) => {
+         // console.log(res.tempFiles[0].tempFilePath)  //本地临时文件路径 (本地路径)
+        // console.log(res.tempFiles[0].size)  //本地临时文件大小，单位 B
+        console.log(res,"res");
+        this.setData({
+          upImgList:[...this.data.upImgList,...res.tempFiles]
+        })
+       }
+   
+    })
+      
   },
  // 点击tab栏
  handleItemTabs(e) {

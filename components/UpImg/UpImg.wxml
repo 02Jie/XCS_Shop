@@ -1,0 +1,18 @@
+<!--components/UpImg/UpImg.wxml-->
+<view class="u_index">
+    <view class="upImg_box">
+    <view class="upImg" >
+        <image src="{{imgs.tempFilePath}}" mode="widthFix" />            
+    </view>
+    <view>
+        <icon class="" type="clear" size="23" color="red">
+            
+        </icon>
+          
+    </view>
+</view>
+  
+</view>
+
+
+  
